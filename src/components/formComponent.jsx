@@ -6,7 +6,7 @@ import { useHistory } from "react-router-dom";
 import {useSelector,useDispatch} from "react-redux";
 import {resumeDataSubmitAction} from "../actions/resumeDataSubmitAction";
 
-const FormComponent = (props) => {
+const FormComponent = () => {
   let history = useHistory();
   let dispath=useDispatch();
 
@@ -59,7 +59,6 @@ const FormComponent = (props) => {
 
   const handleSubmitForm = (e) => {
     e.preventDefault();
-    props.handleResumeDetails(resumeDetails);
     dispath(resumeDataSubmitAction(resumeDetails));
     history.push("/print-resume");
   };

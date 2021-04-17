@@ -1,12 +1,11 @@
 import React from "react";
-import {useSelector,useDispatch} from "react-redux";
+import {useSelector} from "react-redux";
 import {Redirect} from "react-router";
 import "../sass/style.scss";
 
 const ResumeComponent=()=>{
     
     let resumeDetails=useSelector(state=>state.resumeDetailsReducer);
-    console.log(resumeDetails);
     
     const handlePrintButton=()=>window.print();
 
