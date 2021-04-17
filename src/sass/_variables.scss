@@ -1,0 +1,43 @@
+$h1:2rem;
+$h2:1rem;
+$p:0.8rem;
+
+$primaryColor:#003366;
+$bodyColor:#000;
+$secondaryColor:#666666;
+
+$headingFonts:"Quicksand";
+$textFonts:"Nunito Sans";
+$captionFont:"Kanit";
+$orgFont:"Montserrat";
+
+// HEADINGS RALEWAY BOLD
+// TEXT OPENSANS REGULAR
+
+@mixin flex() {
+    display: flex;
+}
+
+@mixin flex-column() {
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin flex-justify($dir,$justify) {
+    display: flex;
+    flex-direction: $dir;
+    justify-content: $justify;
+}
+
+@mixin flex-full($dir,$justify,$align){
+    display: flex;
+    flex-direction:$dir;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@mixin sementic-reset {
+    margin: unset;
+    line-height: unset;
+    min-height:unset;
+}

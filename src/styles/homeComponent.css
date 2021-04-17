@@ -1,0 +1,14 @@
+.home-wrapper{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.section-one{
+    flex: 1;
+}
+.section-one{
+    flex: 1;
+}
