@@ -3,25 +3,15 @@ import "../styles/formComponent.css";
 import 'semantic-ui-css/semantic.min.css'
 import { Form, Button, Input, Icon } from "semantic-ui-react";
 import { useHistory } from "react-router-dom";
+import {useSelector,useDispatch} from "react-redux";
+import {resumeDataSubmitAction} from "../actions/resumeDataSubmitAction";
 
 const FormComponent = (props) => {
   let history = useHistory();
-  const [resumeDetails, setResumeDetails] = React.useState({
-    name: "",
-    title: "",
-    about: "",
-    phone: "",
-    email: "",
-    linkedin: "",
-    github: "",
-    twitter: "",
-    web: "",
-    expertise: "",
-    exp: [{ role: "", org: "", desc: "", from: "", to: "" }],
-    cert: [{ name: "", org: "", date: "" }],
-    skills: "",
-    edu: [{ degree: "", institute: "", from: "", to: "" }],
-  });
+  let dispath=useDispatch();
+
+  let resumeDetailsStore=useSelector(state=>state.resumeDetailsReducer);
+  const [resumeDetails, setResumeDetails] = React.useState(resumeDetailsStore);
 
   const addExpRow = (e) => {
     e.preventDefault();
@@ -70,6 +60,7 @@ const FormComponent = (props) => {
   const handleSubmitForm = (e) => {
     e.preventDefault();
     props.handleResumeDetails(resumeDetails);
+    dispath(resumeDataSubmitAction(resumeDetails));
     history.push("/print-resume");
   };
 

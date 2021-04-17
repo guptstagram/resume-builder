@@ -1,16 +1,16 @@
 import React from "react";
+import {useSelector,useDispatch} from "react-redux";
+import {Redirect} from "react-router";
 import "../sass/style.scss";
 
-const ResumeComponent=(props)=>{
-
-    const {resumeDetails} = props;
+const ResumeComponent=()=>{
     
+    let resumeDetails=useSelector(state=>state.resumeDetailsReducer);
     console.log(resumeDetails);
     
     const handlePrintButton=()=>window.print();
 
-    return(
-        <div id="wrapper">
+    return resumeDetails.name?<div id="wrapper">
         <div className="print-button" onClick={handlePrintButton}><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 11v12h-24v-12h4v-10h10.328c1.538 0 5.672 4.852 5.672 6.031v3.969h4zm-6-3.396c0-1.338-2.281-1.494-3.25-1.229.453-.813.305-3.375-1.082-3.375h-7.668v13h12v-8.396zm-2 5.396h-8v-1h8v1zm0-3h-8v1h8v-1zm0-2h-8v1h8v-1z"/></svg></div>
         <div className="a4-wrapper">
             <div className="intro-section">
@@ -84,8 +84,7 @@ const ResumeComponent=(props)=>{
                 </div>)}
             </div>:null}
         </div>
-    </div>
-    )
+    </div>:<Redirect to="create-resume"/>
 }
 
 export default ResumeComponent;
