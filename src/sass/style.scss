@@ -80,6 +80,7 @@ p {
     .print-button {
       display: none;
     }
+    div,span,h1,h2,h3,h4,h6,p{page-break-inside: avoid !important;}
   }
 
 .a4-wrapper {
