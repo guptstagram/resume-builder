@@ -191,9 +191,9 @@ const FormComponent = () => {
                 onChange={(e) => handleMultipleFields(e, "exp", index)}
               />
               <p className="hint">
-                Hint:{" "}
+                Hint: 
                 {
-                  "Put <br> in between the text in description to reflect the text in the next line."
+                  " Put <br> in between the text in description to reflect the text in the next line."
                 }
               </p>
               <Form.Group widths="equal">
